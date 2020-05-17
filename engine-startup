@@ -4,4 +4,6 @@ JAVA_HOME=/usr/java/jdk1.8.0_201-amd64
 JAVA_EXEC=$JAVA_HOME/bin/java
 ENGINE_HOME=/opt/log-analysis
 
-exec $JAVA_EXEC $JAVA_OPTS -Djava.ext.dirs=$ENGINE_HOME/lib/ -jar $ENGINE_HOME/log-engine.jar --spring.config.location=file:$ENGINE_HOME/application.yml
+JAVA_OPTS="$JAVA_OPTS -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -Xms128m -Xmx256m -Xmn64m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC"
+
+exec $JAVA_EXEC $JAVA_OPTS -Djava.ext.dirs=$ENGINE_HOME/lib/ -jar $ENGINE_HOME/log-engine-1.0.0.jar --spring.config.location=file:$ENGINE_HOME/application.yml
