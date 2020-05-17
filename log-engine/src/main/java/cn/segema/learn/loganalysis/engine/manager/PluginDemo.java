@@ -1,4 +1,4 @@
-package cn.segema.learn.loganalysis.engine;
+package cn.segema.learn.loganalysis.engine.manager;
 
 import java.io.BufferedReader;
 import java.io.File;
