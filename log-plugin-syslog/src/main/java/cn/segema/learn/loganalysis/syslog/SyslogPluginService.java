@@ -12,7 +12,7 @@ import cn.segema.learn.loganalysis.api.LogPlugin;
 public class SyslogPluginService implements LogPlugin{
 	@Override
 	public List<String> parseLog(String param) {
-		System.out.println(" parse mysql log ");
+		System.out.println(" parse syslog log ");
 		return null;
 	}
 }

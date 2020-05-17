@@ -1,0 +1,31 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-engine
+  jpa:
+    database: MYSQL
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties: 
+      hibernate: 
+        dialect : org.hibernate.dialect.MySQL5Dialect
+  datasource:                          
+    url: jdbc:mysql://127.0.0.1:3306/mytest?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root  
+    password: root
+
+# 日志配置:
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    io.swagger.models.parameters.AbstractSerializableParameter: ERROR
+    cn.sgema.learn.loganalysis.engine: ERROR
+  file: /data/logs/log-analysis/engine.log 
+

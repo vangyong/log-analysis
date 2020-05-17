@@ -1,0 +1,7 @@
+#!/bin/bash
+
+JAVA_HOME=/usr/java/jdk1.8.0_201-amd64
+JAVA_EXEC=$JAVA_HOME/bin/java
+ENGINE_HOME=/opt/log-analysis
+
+exec $JAVA_EXEC $JAVA_OPTS -Djava.ext.dirs=$ENGINE_HOME/lib/ -jar $ENGINE_HOME/log-engine.jar --spring.config.location=file:$ENGINE_HOME/application.yml
